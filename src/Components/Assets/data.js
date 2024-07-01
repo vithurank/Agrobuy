@@ -21,7 +21,7 @@ let data_product = [
   {id:3,
     name:"Aromatic Mint Seeds",
     image:p3_img,
-    new_price:60.00,
+    new_price:199.00,
     old_price:450.00,
   },
   {id:4,
