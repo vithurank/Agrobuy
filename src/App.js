@@ -10,6 +10,9 @@ import Product from './Pages/Product';
 import Cart from './Pages/Cart';
 import LoginSignup from './Pages/LoginSignup';
 import Footer from './Components/Footer/Footer';
+import equipments_banner from './Components/Assets/banner_equipments.png';
+import seeds_banner from './Components/Assets/banner_seeds.png';
+import fertilizers_banner from './Components/Assets/banner_fertilizers.png';
 
 function App() {
   return (
@@ -18,9 +21,9 @@ function App() {
       <Navbar/>
       <Routes>
         <Route path="/" element={<Shop/>} />
-        <Route path="/equipments" element={<ShopCategory category="equipments"/>} />
-        <Route path="/seeds" element={<ShopCategory category="seeds"/>} />
-        <Route path="/fertilizers" element={<ShopCategory category="fertilizers"/>} />
+        <Route path="/equipments" element={<ShopCategory banner={equipments_banner} category="equipments"/>} />
+        <Route path="/seeds" element={<ShopCategory banner={seeds_banner} category="seeds"/>} />
+        <Route path="/fertilizers" element={<ShopCategory banner={fertilizers_banner} category="fertilizers"/>} />
         <Route path="/product" element={<Product/>}>
             <Route path=':productId' element={<Product/>} /> 
         </Route>
