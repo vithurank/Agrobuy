@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './ProductDisplay.css';
 import star_icon from "../Assets/star_icon.png";
 import star_dull_icon from "../Assets/star_dull_icon.png";
+import { ShopContext } from '../../Context/ShopContext';
 
 
 const ProductDisplay = (props) => {
+
     const {product} = props;
+    const {addToCart} = useContext(ShopContext);
     return (
         <div className='productdisplay'>
             <div className='productdisplay-left'>
@@ -34,9 +37,9 @@ const ProductDisplay = (props) => {
                     <div className='productdisplay-right-price-new'>Rs.{product.new_price}</div>
                 </div>
                 <div className='productdisplay-right-description'>
-                Discover a world of growth and productivity at AgroBuy! We specialize in providing top-quality agricultural equipment, premium seeds, and nutrient-rich fertilizers. Whether you’re a seasoned farmer or a budding gardener, AgroBuy has everything you need to nurture your land and reap bountiful harvests.
-                </div>
-                <button> ADD TO CART </button>
+                <p>Discover a world of growth and productivity at AgroBuy! We specialize in providing top-quality agricultural equipment, premium seeds, and nutrient-rich fertilizers. Whether you’re a seasoned farmer or a budding gardener, AgroBuy has everything you need to nurture your land and reap bountiful harvests.
+                </p></div>
+                <button onClick={()=>{addToCart(product.id)}}> ADD TO CART </button>
                 <p className='productdispaly-right-category'><span>Category :</span> Equipment, Machine, Tractor</p>
                 <p className='productdispaly-right-category'><span>Tags :</span> Equipment, Modern, Latest</p>
             </div>
